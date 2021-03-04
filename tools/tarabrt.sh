@@ -180,9 +180,9 @@ ${BINARY} --version >"${VERSION}"
 
 # Collect the most important artefacts.
 {
+	echo "${VERSION}"
 	echo "${BINARY}"
 	echo "${COREFILE}"
-	echo "${VERSION}"
 } >>"${TARLIST}"
 
 SEPARATOR1="Shared Object Library"
