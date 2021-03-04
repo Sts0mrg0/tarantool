@@ -227,9 +227,9 @@ The archive contents are listed below:
 ${TARLIST}
 $(cat ${TARLIST})
 
-If you want to upload it, choose the available resourse
+If you want to upload it, choose the available resource
 (e.g. http://transfer.sh) and run the following command:
-$ curl -T ${ARCHIVENAME} <resourse-uri>
+$ curl -T ${ARCHIVENAME} <resource-uri>
 FINALIZE
 
 # Cleanup temporary files.
