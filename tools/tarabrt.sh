@@ -19,6 +19,7 @@ SYNOPSIS
 
 Supported options are:
   -c COREDUMP                   Use file COREDUMP as a core dump to examine.
+                                See core(5) for more info.
 
   -d DIRECTORY                  Create the resulting archive with the artefacts
                                 within DIRECTORY.
