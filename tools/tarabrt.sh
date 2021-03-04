@@ -222,7 +222,10 @@ tar -czhf "${ARCHIVENAME}" -P -T "${TARLIST}" \
 	--add-file="${TARLIST}"
 
 [ -t 1 ] && cat <<FINALIZE
-The resulting is located here: ${ARCHIVENAME}
+The resulting archive is located here: ${ARCHIVENAME}
+The archive contents are listed below:
+${TARLIST}
+$(cat ${TARLIST})
 
 If you want to upload it, choose the available resourse
 (e.g. http://transfer.sh) and run the following command:
