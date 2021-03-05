@@ -137,7 +137,16 @@ NOGDB
 	exit 1;
 fi
 
-if file "${BINARY}" | grep -qv 'executable'; then
+# XXX: There is annoying bug in file(1), making it claim that PIE
+# is a shared object, but not an executable one. Strictly saying,
+# there was no PIE support until 5.34 at all, but the whole thing
+# didn't work until 5.36. Unfortunately, there are distros (e.g.
+# CentOS 8) providing file utility without valid PIE support, but
+# compiling PIE binaries. As a result we ought to respect both
+# behaviours for the check below. For more info, see the highly
+# detailed answer on Stack Overflow below.
+# https://stackoverflow.com/a/55704865/4609359
+if file "${BINARY}" | grep -qvE 'executable|shared object'; then
 	[ -t 1 ] && cat <<NOTELF
 Not an ELF file: ${BINARY}
 
