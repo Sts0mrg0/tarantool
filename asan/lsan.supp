@@ -30,7 +30,7 @@ leak:gconv_init
 
 # test: box*/
 # source: third_party/luajit
-leak:lj_BC_FUNCC
+# leak:lj_BC_FUNCC
 
 # test: box/access.test.lua
 # test: box/access_bin.test.lua
